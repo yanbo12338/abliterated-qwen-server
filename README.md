@@ -36,7 +36,7 @@ Manual Setup & Usage
     Clone the repository:
     Bash
 
-    git clone https://github.com/YOUR_USERNAME/huihui-qwen-vllm.git
+    git clone https://raw.githubusercontent.com/yanbo12338/abliterated-qwen-server/main/deploy.sh
     cd huihui-qwen-vllm
 
     Make scripts executable:
