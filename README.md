@@ -1,27 +1,31 @@
-Huihui-Qwen vLLM Deployment
+Here is the corrected and polished version of your README.md file, fixing directory paths, script names, and cloning commands so everything works smoothly for anyone using your repository:
+Markdown
 
-Production-ready deployment kit for running the Huihui-Qwen3.8-27B-abliterated model using vLLM and Docker. This configuration includes custom XML tool parsing (qwen3_xml) to support native function-calling and web-search skills without hanging or breaking token streams.
-Prerequisites
+# Huihui-Qwen vLLM Deployment
 
-    Linux environment with an NVIDIA GPU (Ampere architecture or newer recommended)
+Production-ready deployment kit for running the **Huihui-Qwen3.8-27B-abliterated** model using vLLM and Docker. This configuration includes custom XML tool parsing (`qwen3_xml`) to support native function-calling and web-search skills without hanging or breaking token streams.
 
-    NVIDIA Driver installed and active
+## Prerequisites
 
-    Docker installed with the NVIDIA Container Toolkit configured
+* Linux environment with an NVIDIA GPU (Ampere architecture or newer recommended)
+* NVIDIA Driver installed and active
+* Docker installed with the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) configured
 
-One-Command Deployment
+## One-Command Deployment
 
-To set up and launch the server immediately with a single command, use the unified deploy.sh script:
-Bash
+To set up, install prerequisites, and launch the server immediately with a single command, run the master install script:
 
-curl -sSL https://raw.githubusercontent.com/yanbo12338/abliterated-qwen-server/main/deploy.sh | bash
+```bash
+curl -sSL [https://raw.githubusercontent.com/yanbo12338/abliterated-qwen-server/main/install.sh](https://raw.githubusercontent.com/yanbo12338/abliterated-qwen-server/main/install.sh) | bash
 
-Alternatively, if you have cloned the repository locally, run:
+Alternatively, if you have already cloned the repository locally, run:
 Bash
 
 chmod +x deploy.sh && ./deploy.sh
 
 Repository Scripts
+
+    install.sh - Automated bootstrap installer: checks for Docker, clones the repository, makes scripts executable, and triggers the deployment.
 
     deploy.sh - Full automated installer: pulls the latest vLLM image, creates cache volumes, boots the container, and optionally streams live logs.
 
@@ -36,8 +40,8 @@ Manual Setup & Usage
     Clone the repository:
     Bash
 
-    git clone https://raw.githubusercontent.com/yanbo12338/abliterated-qwen-server/main/deploy.sh
-    cd huihui-qwen-vllm
+    git clone [https://github.com/yanbo12338/abliterated-qwen-server.git](https://github.com/yanbo12338/abliterated-qwen-server.git)
+    cd abliterated-qwen-server
 
     Make scripts executable:
     Bash
@@ -51,7 +55,7 @@ Manual Setup & Usage
 
     Manage the server:
 
-        Start: ./start.sh
+        Start: ./start.sh or ./start_w_logs.sh
 
         Stop: ./stop.sh
 
